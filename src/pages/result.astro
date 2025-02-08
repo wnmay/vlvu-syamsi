@@ -16,7 +16,7 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
         
       {imageId ? (
         <>
-          <div class="text-[#D5A8CF] absolute top-10 left-1/2 -translate-x-1/2 text-4xl font-bold text-center whitespace-nowrap">
+          <div class="text-[#D5A8CF] text-stroke absolute top-10 left-1/2 -translate-x-1/2 text-4xl font-extrabold text-center whitespace-nowrap">
             VID LUV VID YOU
           </div>
           <ResultCard imageId={imageId} client:visible />
