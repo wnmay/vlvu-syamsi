@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import Card from "./Card";
 
 const cards = Array.from({ length: 28 }, (_, i) => i + 1);
 
@@ -82,33 +82,7 @@ export default function RandomCard() {
       {isResultVisible && selectedCard !== null && (
         <div className="fixed inset-0 flex items-center justify-center bg-white/75 z-50">
           <div className="flex flex-col">
-            <motion.div
-              className="relative w-48 h-64 rounded-lg flex items-center justify-center text-4xl font-bold shadow-lg"
-              initial={{ rotateY: 0 }}
-              animate={{ rotateY: isFlipped ? 180 : 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              style={{
-                transformStyle: "preserve-3d",
-              }}
-            >
-              <div
-                className="absolute backface-hidden w-full h-full bg-gray-500 text-white flex items-center justify-center"
-                style={{
-                  transform: "rotateY(0deg)",
-                }}
-              >
-                card
-              </div>
-
-              <div
-                className="absolute backface-hidden w-full h-full bg-black text-white flex items-center justify-center"
-                style={{
-                  transform: "rotateY(180deg)",
-                }}
-              >
-                {selectedCard}
-              </div>
-            </motion.div>
+            <Card isFlipped={isFlipped} cardNumber={selectedCard} />
             <div className="text-center justify-center mt-2">text</div>
           </div>
 
