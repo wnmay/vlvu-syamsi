@@ -10,12 +10,15 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
 <Layout>
   <div 
     class="w-full h-screen bg-cover bg-center bg-gray-500"
+    style={{ backgroundImage: "url('/img/bg-phone.webp')" }}
   >
     <div class="w-full max-w-sm mx-auto">
+        
       {imageId ? (
+        <div class="text-[#D5A8CF] absolute top-10 left-1/2 -translate-x-1/2 text-4xl font-bold text-center whitespace-nowrap">VID LUV VID YOU</div>
         <ResultCard imageId={imageId} client:visible />
       ) : (
-        <div class="text-lg font-semibold text-center text-red-500">404 Not Found</div>
+        <div class="pt-[75%] text-4xl font-semibold text-center text-[#372444]">Card Not Found</div>
       )}
     </div>
   </div>

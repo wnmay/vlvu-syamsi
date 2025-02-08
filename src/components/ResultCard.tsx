@@ -7,7 +7,7 @@ export default function ResultCard({ imageId }: { imageId: string }) {
   return (
     <div className="flex justify-center items-center h-screen">
       <motion.div
-        className="relative w-60 h-100 cursor-pointer"
+        className="relative w-60 h-110 cursor-pointer"
         onClick={() => setIsFlipped(!isFlipped)}
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -19,7 +19,7 @@ export default function ResultCard({ imageId }: { imageId: string }) {
           transition={{ duration: 1 }}
         >
           <img
-            src="https://placehold.co/100x300"
+            src="/img/card/card-back.webp"
             alt="Card Back"
             className="block w-full h-full object-cover"
           />
@@ -31,7 +31,7 @@ export default function ResultCard({ imageId }: { imageId: string }) {
           transition={{ duration: 1 }}
         >
           <img
-            src="https://placehold.co/100x300"
+            src="/img/card/card-back.webp"
             alt="Card Back"
             className="block w-full h-full object-cover"
           />
