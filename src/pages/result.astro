@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const url = new URL(Astro.request.url);
+const queryParam = url.searchParams.get('id');
+const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) : null;
+---
+
+<Layout>
+  <div 
+    class="w-full h-screen bg-cover bg-center bg-gray-500"
+  >
+    <div class="w-full max-w-sm mx-auto">
+      {imageId ? (
+        <div class="text-lg font-semibold text-center text-black justify-center">Image ID: {imageId}</div>
+      ) : (
+        <div class="text-lg font-semibold text-center text-red-500">404 Not Found</div>
+      )}
+    </div>
+  </div>
+</Layout>
+
+
+
+
+
+
+
+
+
+
+
