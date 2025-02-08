@@ -4,7 +4,7 @@ export default function PopupText() {
   return (
     <>
       <motion.div
-        className="text-3xl font-bold text-[#372444] mt-6"
+        className="text-3xl text-[#372444] mt-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}

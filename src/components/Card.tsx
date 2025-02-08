@@ -8,7 +8,7 @@ interface CardProps {
 export default function Card({ isFlipped, cardNumber }: CardProps) {
   return (
     <motion.div
-      className="relative w-60 h-100 rounded-lg flex items-center justify-center text-4xl font-bold shadow-lg"
+      className="relative w-60 h-110 rounded-lg flex items-center justify-center text-4xl font-bold shadow-lg"
       initial={{ rotateY: 0 }}
       animate={{ rotateY: isFlipped ? 180 : 0 }}
       transition={{ duration: 1, ease: "easeInOut" }}
