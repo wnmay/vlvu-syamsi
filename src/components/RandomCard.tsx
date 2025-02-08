@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
+import PopupText from "./PopupText";
 
 const cards = Array.from({ length: 28 }, (_, i) => i + 1);
 
@@ -33,7 +34,7 @@ export default function RandomCard() {
     if (isResultVisible) {
       const flipTimer = setTimeout(() => {
         setIsFlipped(true);
-      }, 3000);
+      }, 3500);
       return () => clearTimeout(flipTimer);
     }
   }, [isResultVisible]);
@@ -100,9 +101,9 @@ export default function RandomCard() {
 
       {isResultVisible && selectedCard !== null && (
         <div className="fixed inset-0 flex items-center justify-center bg-white/75 z-50">
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center justify-center text-center">
             <Card isFlipped={isFlipped} cardNumber={selectedCard} />
-            <div className="text-center justify-center mt-2">text</div>
+            <PopupText />
           </div>
 
           {isFlipped && (
