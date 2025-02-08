@@ -59,10 +59,10 @@ export default function RandomCard() {
           {cards.slice(0, 20).map((card) => (
             <div
               key={card}
-              className={`w-20 h-36 rounded-lg flex items-center justify-center border text-xl ${
+              className={`w-20 h-36 rounded-lg flex items-center justify-center border bg-transparent ${
                 selectedCard === card
                   ? "border-[#FCFCF4] border-8"
-                  : "border-white"
+                  : "border-none"
               }`}
             >
               <img
@@ -77,10 +77,10 @@ export default function RandomCard() {
           {cards.slice(20).map((card) => (
             <div
               key={card}
-              className={`w-20 h-36 rounded-lg flex items-center justify-center border text-xl ${
+              className={`w-20 h-36 rounded-lg flex items-center justify-center border bg-transparent ${
                 selectedCard === card
                   ? "border-[#FCFCF4] border-8"
-                  : "border-white"
+                  : "border-none"
               }`}
             >
               <img
