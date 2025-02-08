@@ -19,7 +19,7 @@ export default function RandomCard() {
       currentIndex = newIndex;
       setSelectedCard(cards[currentIndex]);
       previousIndex = currentIndex;
-    }, 200);
+    }, 250);
 
     setTimeout(() => {
       clearInterval(interval);
@@ -45,17 +45,30 @@ export default function RandomCard() {
   };
 
   return (
-    <div className="relative">
-      <div className="flex flex-col items-center">
+    <>
+      <div
+        className="relative w-full min-h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/img/bg-booth.webp')" }}
+      >
+        <div className="text-[#FCFCF4] text-3xl font-blod text-center">
+          Live without love is sky without sun, moon without stars and <br></br>{" "}
+          life without happiness
+        </div>
         <div className="grid grid-cols-10 gap-4 mt-6">
           {cards.slice(0, 20).map((card) => (
             <div
               key={card}
-              className={`bg-gray-200 w-24 h-24 rounded-lg flex items-center justify-center border text-xl ${
-                selectedCard === card ? "border-black border-8" : "border-white"
+              className={`w-20 h-36 rounded-lg flex items-center justify-center border text-xl ${
+                selectedCard === card
+                  ? "border-[#FCFCF4] border-8"
+                  : "border-white"
               }`}
             >
-              <span>{card}</span>
+              <img
+                src="/img/card/card-back.webp"
+                alt="Card Back"
+                className="block w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -63,17 +76,23 @@ export default function RandomCard() {
           {cards.slice(20).map((card) => (
             <div
               key={card}
-              className={`bg-gray-200 w-24 h-24 rounded-lg flex items-center justify-center border text-xl ${
-                selectedCard === card ? "border-black border-8" : "border-white"
+              className={`w-20 h-36 rounded-lg flex items-center justify-center border text-xl ${
+                selectedCard === card
+                  ? "border-[#FCFCF4] border-8"
+                  : "border-white"
               }`}
             >
-              <span>{card}</span>
+              <img
+                src="/img/card/card-back.webp"
+                alt="Card Back"
+                className="block w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
         <button
           onClick={startRandomization}
-          className="bg-gray-200 mt-6 px-6 py-2 rounded-lg text-xl"
+          className="border-2 border-[#372444] bg-[#FCFCF4] mt-4 px-6 py-2 rounded-lg text-xl text-[#372444] font-semibold hover:bg-[#372444] hover:text-[#FCFCF4]"
         >
           Predict your future
         </button>
@@ -96,6 +115,6 @@ export default function RandomCard() {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 }
