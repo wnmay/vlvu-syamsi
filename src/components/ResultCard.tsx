@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function FlipCard({ imageId }: { imageId: string }) {
+export default function ResultCard({ imageId }: { imageId: string }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (

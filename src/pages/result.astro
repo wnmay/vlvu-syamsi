@@ -1,5 +1,5 @@
 ---
-import FlipCard from "../components/ResultCard";
+import ResultCard from "../components/ResultCard";
 import Layout from "../layouts/Layout.astro";
 
 const url = new URL(Astro.request.url);
@@ -13,7 +13,7 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
   >
     <div class="w-full max-w-sm mx-auto">
       {imageId ? (
-        <FlipCard imageId={imageId} client:visible />
+        <ResultCard imageId={imageId} client:visible />
       ) : (
         <div class="text-lg font-semibold text-center text-red-500">404 Not Found</div>
       )}
