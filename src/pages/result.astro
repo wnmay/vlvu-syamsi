@@ -9,14 +9,13 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
 
 <Layout>
   <div 
-    class="w-full h-screen bg-cover bg-center bg-gray-500 flex flex-col items-center justify-center"
+    class="w-full h-screen bg-cover bg-center bg-gray-500 flex flex-col items-center"
     style={{ backgroundImage: "url('/img/bg-phone.webp')" }}
   >
-    <div class="w-full max-w-sm mx-auto">
         
       {imageId ? (
         <>
-          <div class="text-[#D5A8CF] text-stroke absolute top-10 left-1/2 -translate-x-1/2 text-4xl font-extrabold text-center whitespace-nowrap">
+          <div class="text-[#D5A8CF] text-stroke pt-14 absolute text-4xl font-extrabold text-center whitespace-nowrap">
             VID LUV VID YOU
           </div>
           <ResultCard imageId={imageId} client:visible />
@@ -33,7 +32,6 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
           <div class="text-[#372444] font-semibold text-lg font-medium underline">VIDLOVEVIDU.CHULA</div>
         </a>
       </div>
-    </div>
   </div>
 </Layout>
 
