@@ -25,7 +25,7 @@ export default function Card({ isFlipped, cardNumber }: CardProps) {
         <img
           src="/img/card/card-back.webp"
           alt="Card Back"
-          className="block w-full h-full object-cover"
+          className="block w-full h-full object-cover rounded-lg shadow-lg"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function Card({ isFlipped, cardNumber }: CardProps) {
         <img
           src={`https://placehold.co/100x300`}
           alt={`Card ${cardNumber}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-lg shadow-lg"
         />
       </div>
     </motion.div>
