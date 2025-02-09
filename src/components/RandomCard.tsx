@@ -8,8 +8,12 @@ export default function RandomCard() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const [isResultVisible, setIsResultVisible] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const startRandomization = () => {
+    if (isButtonDisabled) return;
+    setIsButtonDisabled(true);
+    setTimeout(() => setIsButtonDisabled(false), 6000);
     let currentIndex = 0;
     let previousIndex = currentIndex;
     const interval = setInterval(() => {
@@ -93,7 +97,9 @@ export default function RandomCard() {
         </div>
         <button
           onClick={startRandomization}
-          className="border-2 border-[#372444] bg-[#FCFCF4] mt-2 px-6 py-2 rounded-lg text-xl text-[#372444] hover:bg-[#372444] hover:text-[#FCFCF4]"
+          className={`border-2 border-[#372444] bg-[#FCFCF4] mt-2 px-6 py-2 rounded-lg text-xl text-[#372444] hover:bg-[#372444] hover:text-[#FCFCF4] ${
+            isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           Predict your future
         </button>
