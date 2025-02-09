@@ -5,7 +5,7 @@ export default function ResultCard({ imageId }: { imageId: string }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center">
       <motion.div
         className="relative w-70 h-130 cursor-pointer"
         onClick={() => setIsFlipped(!isFlipped)}
