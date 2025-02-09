@@ -51,7 +51,7 @@ export default function RandomCard() {
         className="relative w-full min-h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/img/bg-booth.webp')" }}
       >
-        <div className="text-[#FCFCF4] text-3xl text-center">
+        <div className="text-[#FCFCF4] pt-2 text-3xl text-center">
           Live without love is sky without sun, moon without stars and <br></br>{" "}
           life without happiness
         </div>
@@ -93,7 +93,7 @@ export default function RandomCard() {
         </div>
         <button
           onClick={startRandomization}
-          className="border-2 border-[#372444] bg-[#FCFCF4] mt-4 px-6 py-2 rounded-lg text-xl text-[#372444] hover:bg-[#372444] hover:text-[#FCFCF4]"
+          className="border-2 border-[#372444] bg-[#FCFCF4] mt-2 px-6 py-2 rounded-lg text-xl text-[#372444] hover:bg-[#372444] hover:text-[#FCFCF4]"
         >
           Predict your future
         </button>
@@ -111,7 +111,7 @@ export default function RandomCard() {
               onClick={closePopup}
               className="absolute top-2 right-2 text-black w-8 h-8 flex items-center justify-center text-xl font-bold"
             >
-              X
+              x
             </button>
           )}
         </div>
