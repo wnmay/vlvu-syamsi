@@ -24,7 +24,7 @@ export default function RandomCard() {
       currentIndex = newIndex;
       setSelectedCard(cards[currentIndex]);
       previousIndex = currentIndex;
-    }, 250);
+    }, 500);
 
     setTimeout(() => {
       clearInterval(interval);
@@ -63,10 +63,10 @@ export default function RandomCard() {
           {cards.slice(0, 20).map((card) => (
             <div
               key={card}
-              className={`w-20 h-36 rounded-lg flex items-center justify-center border bg-transparent ${
+              className={`relative w-20 h-36 rounded-lg flex items-center justify-center bg-transparent transition-all ${
                 selectedCard === card
-                  ? "border-[#FCFCF4] border-8"
-                  : "border-none"
+                  ? "shadow-[0_0_20px_10px_rgba(255,255,255)] backdrop-blur-sm"
+                  : ""
               }`}
             >
               <img
@@ -81,10 +81,10 @@ export default function RandomCard() {
           {cards.slice(20).map((card) => (
             <div
               key={card}
-              className={`w-20 h-36 rounded-lg flex items-center justify-center border bg-transparent ${
+              className={`relative w-20 h-36 rounded-lg flex items-center justify-center bg-transparent transition-all ${
                 selectedCard === card
-                  ? "border-[#FCFCF4] border-8"
-                  : "border-none"
+                  ? "shadow-[0_0_20px_10px_rgba(255,255,255)] backdrop-blur-sm"
+                  : ""
               }`}
             >
               <img
