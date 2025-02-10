@@ -9,16 +9,24 @@ const imageId = queryParam && queryParam.length >= 10 ? queryParam.slice(5, 7) :
 
 <Layout>
     <div 
-      class="w-full h-screen bg-cover bg-center bg-gray-500 flex flex-col items-center justify-center gap-6"
+      class="w-full min-h-screen bg-cover bg-center bg-gray-500 flex flex-col items-center justify-center gap-6"
       style={{ backgroundImage: "url('/img/bg-phone.webp')" }}
     >
         {imageId ? (
           <div class="flex flex-col items-center gap-4">
-            <div class="text-[#D5A8CF] text-stroke text-4xl font-extrabold text-center">
+            <div class="text-[#D5A8CF] text-stroke text-4xl font-extrabold text-center pt-2">
               VID LUV VID YOU
             </div>
             <ResultCard imageId={imageId} client:visible />
+            <a 
+            href={`/img/card/download/${imageId}.png`}
+              download={`syamsi-${imageId}.png`} 
+              class="bg-[#FCFCF4] text-[#372444] px-4 py-2 rounded-lg font-semibold hover:bg-[#372444] hover:text-[#FCFCF4]"
+            >
+              Download Image
+            </a>
           </div>
+
         ) : (
           <div class="text-4xl font-semibold text-center text-[#372444]">
             Card Not Found
