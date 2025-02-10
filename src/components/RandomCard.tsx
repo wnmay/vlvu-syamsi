@@ -13,25 +13,43 @@ export default function RandomCard() {
   const startRandomization = () => {
     if (isButtonDisabled) return;
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 6000);
+    setTimeout(() => setIsButtonDisabled(false), 8000);
+
     let currentIndex = 0;
     let previousIndex = currentIndex;
-    const interval = setInterval(() => {
-      let newIndex;
-      do {
-        newIndex = Math.floor(Math.random() * cards.length);
-      } while (newIndex === previousIndex);
-      currentIndex = newIndex;
-      setSelectedCard(cards[currentIndex]);
-      previousIndex = currentIndex;
-    }, 500);
+    let intervalTime = 800;
+    const minInterval = 150;
+    let tempId = currentIndex;
+
+    function randomize() {
+      tempId = setInterval(() => {
+        let newIndex;
+        do {
+          newIndex = Math.floor(Math.random() * cards.length);
+        } while (newIndex === previousIndex);
+
+        currentIndex = newIndex;
+        setSelectedCard(cards[currentIndex]);
+        previousIndex = currentIndex;
+
+        if (intervalTime > minInterval) {
+          intervalTime *= 0.85;
+          clearInterval(tempId!);
+          randomize();
+        }
+      }, intervalTime);
+    }
+
+    randomize();
 
     setTimeout(() => {
-      clearInterval(interval);
+      clearInterval(tempId);
       const finalCard = cards[Math.floor(Math.random() * cards.length)];
       setSelectedCard(finalCard);
-      setIsResultVisible(true);
-    }, 5000);
+      setTimeout(() => {
+        setIsResultVisible(true);
+      }, 1000);
+    }, 7000);
   };
 
   useEffect(() => {
