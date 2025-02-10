@@ -36,7 +36,7 @@ export default function Card({ isFlipped, cardNumber }: CardProps) {
         }}
       >
         <img
-          src={`https://placehold.co/100x300`}
+          src={`/img/card/qr/${cardNumber}.webp`}
           alt={`Card ${cardNumber}`}
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
