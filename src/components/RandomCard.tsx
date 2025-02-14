@@ -73,11 +73,11 @@ export default function RandomCard() {
         className="relative w-full min-h-screen flex flex-col items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/img/bg-booth.webp')" }}
       >
-        <div className="text-[#FCFCF4] pt-2 text-3xl text-center">
+        <div className="text-[#FCFCF4] pt-12 text-3xl text-center">
           Live without love is sky without sun, moon without stars and <br></br>{" "}
           life without happiness
         </div>
-        <div className="grid grid-cols-10 gap-4 mt-6">
+        <div className="grid grid-cols-10 gap-4 mt-12">
           {cards.slice(0, 20).map((card) => (
             <div
               key={card}
@@ -115,7 +115,7 @@ export default function RandomCard() {
         </div>
         <button
           onClick={startRandomization}
-          className={`border-2 border-[#372444] bg-[#FCFCF4] mt-2 px-6 py-2 rounded-lg text-xl text-[#372444] hover:opacity-50 ${
+          className={`border-2 border-[#372444] bg-[#FCFCF4] mt-12 px-6 py-2 rounded-lg text-xl text-[#372444] hover:opacity-50 ${
             isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
